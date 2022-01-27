@@ -1,6 +1,5 @@
 import {Env, KeyUtils} from "../index";
 import * as qs from "querystring";
-import * as rp from 'request-promise-native';
 const axios = require('axios').default
 import * as elliptic from "elliptic";
 import BitPayException from "../Exceptions/BitPayException";
