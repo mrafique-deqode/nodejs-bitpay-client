@@ -170,7 +170,7 @@ export class RESTcli {
             // });
 
             return await axios({
-                method: 'patch',
+                method: 'put',
                 url: _options.uri,
                 headers: _options.headers,
                 data: _options.body,
