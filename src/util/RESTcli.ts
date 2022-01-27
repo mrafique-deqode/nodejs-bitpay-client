@@ -1,7 +1,6 @@
 import {Env, KeyUtils} from "../index";
 import * as qs from "querystring";
-// import * as rp from 'request-promise-native';
-const axios = require('axios')
+import * as rp from 'request-promise-native';
 import * as elliptic from "elliptic";
 import BitPayException from "../Exceptions/BitPayException";
 
@@ -64,7 +63,7 @@ export class RESTcli {
                 Object.assign(_options.headers, this.getSignedHeaders(_fullURL, _formData));
             }
 
-            return await axios.post(_options).then((resp: any) => resp).then(resp => {
+            return await rp.post(_options).then((resp: any) => resp).then(resp => {
                 return this.responseToJsonString(resp);
             });
         } catch (e) {
@@ -89,7 +88,7 @@ export class RESTcli {
                 Object.assign(_options.headers, this.getSignedHeaders(_fullURL, _query));
             }
 
-            return await axios.get(_options).then((resp: any) => resp).then(resp => {
+            return await rp.get(_options).then((resp: any) => resp).then(resp => {
                 return this.responseToJsonString(resp);
             });
         } catch (e) {
@@ -110,7 +109,7 @@ export class RESTcli {
             _options.uri = _fullURL;
             _options.qs = parameters;
 
-            return await axios.delete(_options).then((resp: any) => resp).then(resp => {
+            return await rp.delete(_options).then((resp: any) => resp).then(resp => {
                 return this.responseToJsonString(resp);
             });
         } catch (e) {
@@ -131,7 +130,7 @@ export class RESTcli {
             _options.uri = _fullURL;
             _options.body = formData;
 
-            return await axios.put(_options).then((resp: any) => resp.data).then(resp => {
+            return await rp.put(_options).then((resp: any) => resp.data).then(resp => {
                 return this.responseToJsonString(resp);
             });
         } catch (e) {

@@ -63,7 +63,7 @@ export class KeyUtils {
             .update(pk)
             .digest();
         const rp = crypto
-            .createHash('sha256')
+            .createHash('ripemd160') // removing ripemd160 from here because it is not supported in node17 version
             .update(sh2)
             .digest();
 

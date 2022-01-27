@@ -1,6 +1,6 @@
 {
   "name": "bitpay-sdk",
-  "version": "2.0.2112",
+  "version": "3.0.2202",
   "description": "Complete version of the NodeJS library for the new cryptographically secure BitPay API",
   "main": "dist/index",
   "typings": "dist/index",
@@ -37,22 +37,20 @@
   },
   "homepage": "https://github.com/bitpay/nodejs-bitpay-client#readme",
   "dependencies": {
-    "axios": "^0.25.0",
     "bs58": "^4.0.1",
     "client-request": "^2.3.0",
     "elliptic": "^6.5.4",
-    "request-promise-native": "^1.0.0",
-    "uuid": "^8.3.2"
+    "request-promise-native": "^1.0.0"
   },
   "devDependencies": {
     "@types/bs58": "^4.0.0",
     "@types/elliptic": "^6.4.14",
     "@types/jest": "^24.0.13",
-    "@types/node": "^12",
+    "@types/node": "^12.20.42",
     "@types/puppeteer": "^1.20.8",
     "@types/request": "^2.48.7",
     "@types/request-promise-native": "^1.0.18",
-    "jest": "^27.4.7",
+    "jest": "^24.9.0",
     "prettier": "^1.17.1",
     "puppeteer": "^1.16.0",
     "rimraf": "^2.6.3",
