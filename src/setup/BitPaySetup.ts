@@ -208,17 +208,10 @@ let requestTokens = async (option) => {
                 headers: headers,
                 json: true
             };
-            // console.log(options)
-            // request(options, function (error, response, body) {
-            //     let jsonResponse = JSON.parse(JSON.stringify(body.data[0]));
-            //     merchantToken = jsonResponse['token'];
-            //     merchantPairCode = jsonResponse['pairingCode'];
-            //     console.log(`This is body from request: ${JSON.stringify(body)}`)
-            // });
 
             axios({
-                method: 'post',
-                url: 'https://test.bitpay.com/tokens',
+                method: options.method,
+                url: options.url,
                 headers: options.headers,
                 data: {
                     id: options.body.id,
@@ -246,18 +239,10 @@ let requestTokens = async (option) => {
                 headers: headers,
                 json: true
             };
-            // console.log(options)
-
-            // request(options, function (error, response, body) {
-            //     console.log(body.data[0])
-            //     let jsonResponse = JSON.parse(JSON.stringify(body.data[0]));
-            //     payoutToken = jsonResponse['token'];
-            //     payoutPairCode = jsonResponse['pairingCode'];
-            // });
 
             axios({
-                method: 'post',
-                url: 'https://test.bitpay.com/tokens',
+                method: options.method,
+                url: options.url,
                 headers: options.headers,
                 data: {
                     id: options.body.id,
@@ -281,8 +266,6 @@ let requestTokens = async (option) => {
     }
 };
 let updateConfigFile = async () => {
-    // console.log(merchantToken);
-    // console.log(payoutToken);
     let confObj;
 
     if (environment == 'Test') {
