@@ -109,7 +109,8 @@ export class RESTcli {
                 method: 'get',
                 url: _options.uri,
                 headers: _options.headers,
-                data: _options.body
+                data: _options.body,
+                params: _options.qs
             }).then((resp: any) => resp.data).then((resp) => {
                 return this.responseToJsonString(resp.data)
             })
@@ -140,7 +141,8 @@ export class RESTcli {
                 method: 'delete',
                 url: _options.uri,
                 headers: _options.headers,
-                data: _options.body
+                data: _options.body,
+                params: _options.qs
             }).then((resp: any) => resp.data).then((resp) => {
                 return this.responseToJsonString(resp.data)
             })
@@ -171,7 +173,8 @@ export class RESTcli {
                 method: 'patch',
                 url: _options.uri,
                 headers: _options.headers,
-                data: _options.body
+                data: _options.body,
+                params: _options.qs
             }).then((resp: any) => resp.data).then((resp) => {
                 return this.responseToJsonString(resp.data)
             })

@@ -1,5 +1,5 @@
 const fs = require('fs');
-const request = require('client-request');
+// const request = require('client-request');
 const axios = require('axios').default
 const BitPaySDK = require('../index');
 const readline = require('readline');
