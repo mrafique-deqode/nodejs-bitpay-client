@@ -82,7 +82,7 @@ export class RESTcli {
             })
 
         } catch (e) {
-            throw new BitPayException(null,"RESTcli POST failed: " + e.response.data.error);
+            throw new BitPayException(null,"RESTcli POST failed: " + JSON.stringify(e.response.data));
         }
     }
 
@@ -118,7 +118,7 @@ export class RESTcli {
             })
 
         } catch (e) {
-            throw new BitPayException(null,"RESTcli GET failed : " + e.response.data.error);
+            throw new BitPayException(null,"RESTcli GET failed : " + JSON.stringify(e.response.data));
         }
     }
 
@@ -150,7 +150,7 @@ export class RESTcli {
             })
 
         } catch (e) {
-            throw new BitPayException(null, "RESTcli DELETE failed : " + e.response.data.error);
+            throw new BitPayException(null, "RESTcli DELETE failed : " + JSON.stringify(e.response.data));
         }
     }
 
@@ -182,7 +182,7 @@ export class RESTcli {
             })
 
         } catch (e) {
-            throw new BitPayException(null, "RESTcli UPDATE failed : " + e.response.data.error);
+            throw new BitPayException(null, "RESTcli UPDATE failed : " + JSON.stringify(e.response.data));
         }
     }
 
