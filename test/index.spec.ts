@@ -2,11 +2,12 @@ const BitPaySDK = require('../src/index');
 
 let client;
 let tokens = BitPaySDK.Tokens;
-tokens.merchant = "D9zgmn4bHmrKcpUY72N28JAKzEEKSF4UpMWdCpWyBKJx";
-let privateKey = "81cc183fe31e318337f885f0d7058a615855f5e930f25dc1510c4283a52a823f";
+tokens.merchant = "HznXoFwMMKLjq7Qrrtg6skQ9sfnJrtTJTrRxagHsDnd5";
+tokens.payout = "9XRgze9LPrCNMgym8L2UauSoQkZKgBUzrTnC4RPjeeLo"
+let privateKey = "348cf26ca5c283acd987f2c40dcebc01c909843592e7a9e4110844b7aa28c4e8";
 describe('BitPaySDK.Client', () => {
   beforeAll(() => {
-    jest.setTimeout(20000); // browser takes a while
+    jest.setTimeout(2000); // browser takes a while
   });
 
   it('should prepare client', async () => {

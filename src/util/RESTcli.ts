@@ -1,5 +1,7 @@
 import {Env, KeyUtils} from "../index";
 import * as qs from "querystring";
+// const request = require('client-request')
+import * as rp from 'request-promise-native'
 const axios = require('axios').default
 import * as elliptic from "elliptic";
 import BitPayException from "../Exceptions/BitPayException";
@@ -80,7 +82,7 @@ export class RESTcli {
             })
 
         } catch (e) {
-            throw new BitPayException(null,"RESTcli POST failed: " + e.message);
+            throw new BitPayException(null,"RESTcli POST failed: " + e.response.data.error);
         }
     }
 
@@ -116,7 +118,7 @@ export class RESTcli {
             })
 
         } catch (e) {
-            throw new BitPayException(null,"RESTcli GET failed : " + e.message);
+            throw new BitPayException(null,"RESTcli GET failed : " + e.response.data.error);
         }
     }
 
@@ -148,7 +150,7 @@ export class RESTcli {
             })
 
         } catch (e) {
-            throw new BitPayException(null, "RESTcli DELETE failed : " + e.message);
+            throw new BitPayException(null, "RESTcli DELETE failed : " + e.response.data.error);
         }
     }
 
@@ -180,7 +182,7 @@ export class RESTcli {
             })
 
         } catch (e) {
-            throw new BitPayException(null, "RESTcli UPDATE failed : " + e.message);
+            throw new BitPayException(null, "RESTcli UPDATE failed : " + e.response.data.error);
         }
     }
 

@@ -12,10 +12,10 @@ describe('BitPaySDK.Client', () => {
     beforeAll(() => {
         jest.setTimeout(20000); // browser takes a while
         let tokens = BitPaySDK.Tokens;
-        tokens.merchant = '';
-        tokens.payout = '';
+        tokens.merchant = 'HznXoFwMMKLjq7Qrrtg6skQ9sfnJrtTJTrRxagHsDnd5';
+        tokens.payout = '9XRgze9LPrCNMgym8L2UauSoQkZKgBUzrTnC4RPjeeLo';
         let keyFilePath = __dirname+'/../secure/private_key_test.key';
-        let keyPlainText = '';
+        let keyPlainText = '348cf26ca5c283acd987f2c40dcebc01c909843592e7a9e4110844b7aa28c4e8';
         let configFilePath = __dirname+'/../secure/BitPay.config.json';
 
         client = new BitPaySDK.Client(null, Env.Test, keyPlainText, tokens);
@@ -54,7 +54,7 @@ describe('BitPaySDK.Client', () => {
 
         it('should create invoice', async () => {
             invoice = await client.CreateInvoice(invoiceData);
-            console.log(invoice);
+            console.log(invoice.url);
 
             expect(invoice).toBeDefined();
         });
@@ -371,9 +371,9 @@ describe('BitPaySDK.Client', () => {
 
         let instructionsList = [];
 
-        instructionsList.push(new PayoutInstruction(7.05, RecipientReferenceMethod.EMAIL, "sandbox+recipient1@bitpay.com"));
-        instructionsList.push(new PayoutInstruction(22.36, RecipientReferenceMethod.EMAIL, "sandbox+recipient2@bitpay.com"));
-        instructionsList.push(new PayoutInstruction(251.29, RecipientReferenceMethod.EMAIL, "sandbox+recipient3@bitpay.com"));
+        instructionsList.push(new PayoutInstruction(7.05, RecipientReferenceMethod.EMAIL, "nsoni@deqode.com"));
+        instructionsList.push(new PayoutInstruction(22.36, RecipientReferenceMethod.EMAIL, "mrafique@deqode.com"));
+        instructionsList.push(new PayoutInstruction(251.29, RecipientReferenceMethod.EMAIL, "nsoni@deqode.com"));
 
         let batch0 = new PayoutBatch(Currencies.USD, instructionsList, Currencies.ETH);
 
@@ -413,7 +413,7 @@ describe('BitPaySDK.Client', () => {
         });
 
         it('should request payout batch notification', async () => {
-            batch0.notificationEmail = 'sandbox@bitpay.com';
+            batch0.notificationEmail = 'nsoni@deqode.com';
             batch0.notificationURL = 'https://hookb.in/QJOPBdMgRkukpp2WO60o';
 
             createdBatch = await client.SubmitPayoutBatch(batch0);
