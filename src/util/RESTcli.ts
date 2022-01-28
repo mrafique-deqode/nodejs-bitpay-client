@@ -150,6 +150,7 @@ export class RESTcli {
             })
 
         } catch (e) {
+            console.log(e)
             throw new BitPayException(null, "RESTcli DELETE failed : " + JSON.stringify(e.response.data));
         }
     }
